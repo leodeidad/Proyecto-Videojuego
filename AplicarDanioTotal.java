@@ -11,14 +11,9 @@ public class AplicarDanioTotal {
         Random random = new Random();
         boolean defensa = random.nextBoolean();
         if (!defensa) {
-            if (!p2.isVivo()) {
-                p2.setVida(0);
-            }
             return danio.aplicarDanio(p1, p2);
         } else {
-            if (!p2.isVivo()) {
-                p2.setVida(0);
-                }
+            
             p2.textoDefensa();
             return danio.aplicarDanio(p1, p2) + p2.defensa;
         }

@@ -41,15 +41,15 @@ public class Combate {
                    a.textoAtaque();
                    int v1 = vidaRestante.aplicarDanioTotal(a, b, new DanioAtaqueNormal());
                    b.setVida(v1);                   
-                   System.out.println("Vida de "+a.nombre+": "+a.vida);
-                   System.out.println("Vida de "+b.nombre+": "+b.vida);
+                   System.out.println("Vida de "+a.getNombre()+": "+a.getVida());
+                   System.out.println("Vida de "+b.getNombre()+": "+b.getVida());
                    break;
                case 1:
                    a.textoAtaqueEspecial();
                    int v2 = vidaRestante.aplicarDanioTotal(a, b, new DanioAtaqueEspecial());
                    b.setVida(v2);
-                   System.out.println("Vida de "+a.nombre+": "+a.vida);
-                   System.out.println("Vida de "+b.nombre+": "+b.vida);               
+                   System.out.println("Vida de "+a.getNombre()+": "+a.getVida());
+                   System.out.println("Vida de "+b.getNombre()+": "+b.getVida());               
                    break;
                    }
         }while(a.isVivo() && b.isVivo());           

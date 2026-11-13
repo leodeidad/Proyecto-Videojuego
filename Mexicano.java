@@ -13,9 +13,9 @@ public class Mexicano extends Personaje{
     @Override
     public void datos(){
         System.out.println("Desde la tierra de los ajolotes y las catrinas llega el luchador "
-                + nombre + "tomando tequila. \nLlega con:\nVida: "
+                + nombre + " tomando tequila. \nLlega con:\nVida: "
                 + vida + "\nFuerza: "+ fuerza + "\nDefensa: " + defensa + "\nEspecial: " + especial 
-                + "\nEnergia: "+ energia);
+                + "\nEnergia: "+ energia+"\n");
     }
     
     //Implementación Interfaces de texto heredadas del abstract Personajes

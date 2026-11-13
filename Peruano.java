@@ -21,7 +21,7 @@ public class Peruano extends Personaje {
                 + "guerrero mas fuerte del imperio Inca, el inigualable " + nombre
                 + " acompañado de sus fieles palomas y sus deliciosos cuyes. \nLlega con:\nVida: "
                 + vida + "\nFuerza: "+ fuerza + "\nDefensa: " + defensa + "\nEspecial: " + especial 
-                + "\nEnergia: "+ energia);
+                + "\nEnergia: "+ energia+"\n");
     }
 
     //Implementación Interfaces de texto heredadas del abstract Personajes
