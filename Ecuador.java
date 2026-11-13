@@ -10,7 +10,7 @@
 public class Ecuador extends Entorno {
 
     public Ecuador() {
-        super("Bosque Salvaje", "Solo los animales sobreviven" , 3);
+        super("Bosque Salvaje", "Solo los animales sobreviven" , 3, 5);
     }
 
     @Override

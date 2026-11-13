@@ -13,7 +13,7 @@ public class AplicarDanioEntorno implements DanioEntorno{
                 a = p2;
             }
             if(a.getId() != entorno.getId()){
-                a.setVida(a.getVida() - entorno.getdanioEntorno());
+                a.setVida(a.getVida() - entorno.getDanioEntorno());
                 System.out.println(a.getNombre() + " recibio danio del entorno.");
             }
         }

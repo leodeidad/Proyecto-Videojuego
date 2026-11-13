@@ -12,10 +12,12 @@ public abstract class Entorno {
     protected String descripcion; //(Solo que describa elementos especiales)
     protected int id; //identificador para los tipos de luchadores (Fuego: 1, Hielo : 2, naturaleza; 3, electricidad: 4)
     protected boolean armas;
+    protected int danioEntorno;
 
-    public Entorno(String nombre, String descripcion, int id) {
+    public Entorno(String nombre, String descripcion, int id, int danioEntorno) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.danioEntorno = danioEntorno;
         this.id = id;
         this.armas = false;
     }
@@ -37,5 +39,9 @@ public abstract class Entorno {
     } //Obtener el identificador del entorno
     
     public abstract void Descripcion(); // Aplicar polimorfismo para mostrar la descripcion del escenario
+
+    public int getDanioEntorno() {
+        return danioEntorno;
+    }
     
 }

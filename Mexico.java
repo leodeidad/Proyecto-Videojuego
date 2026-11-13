@@ -10,7 +10,7 @@
 public class Mexico extends Entorno {
 
     public Mexico() {
-        super("Lago Congelado", "El piso es fragil" , 2);
+        super("Lago Congelado", "El piso es fragil" , 2, 5);
     }
 
     @Override

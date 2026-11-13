@@ -14,6 +14,8 @@ public class Combate {
     Personaje personaje2;
     Entorno escenario;
     AplicarDanioTotal vidaRestante = new AplicarDanioTotal();
+    DanioEntorno e = new AplicarDanioEntorno();
+            
 
     public Combate(Personaje personaje1, Personaje personaje2, Entorno escenario) {
         this.personaje1 = personaje1;
@@ -40,7 +42,8 @@ public class Combate {
                case 0:
                    a.textoAtaque();
                    int v1 = vidaRestante.aplicarDanioTotal(a, b, new DanioAtaqueNormal());
-                   b.setVida(v1);                   
+                   b.setVida(v1);   
+                   e.danioEntorno(a, b, escenario);
                    System.out.println("Vida de "+a.getNombre()+": "+a.getVida());
                    System.out.println("Vida de "+b.getNombre()+": "+b.getVida());
                    break;
@@ -48,8 +51,9 @@ public class Combate {
                    a.textoAtaqueEspecial();
                    int v2 = vidaRestante.aplicarDanioTotal(a, b, new DanioAtaqueEspecial());
                    b.setVida(v2);
+                   e.danioEntorno(a, b, escenario);
                    System.out.println("Vida de "+a.getNombre()+": "+a.getVida());
-                   System.out.println("Vida de "+b.getNombre()+": "+b.getVida());               
+                   System.out.println("Vida de "+b.getNombre()+": "+b.getVida());         
                    break;
                    }
         }while(a.isVivo() && b.isVivo());           
