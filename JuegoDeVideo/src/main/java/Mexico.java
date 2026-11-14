@@ -10,12 +10,7 @@
 public class Mexico extends Entorno {
 
     public Mexico() {
-        super("Lago Congelado", "El piso es fragil" , 2);
-    }
-
-    @Override
-    public void Descripcion() {
-          System.out.print(this.descripcion + ", mira por donde pisas");
+        super("Mexico", "Hogar de los mayas y de Luis Miguel" , 2, 5, " la penca de un maguey");
     }
     
 }

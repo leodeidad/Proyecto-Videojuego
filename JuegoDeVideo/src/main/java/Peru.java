@@ -10,11 +10,7 @@
 public class Peru extends Entorno {
     //HogarDeLava  Esta orientada a Personajes de Tipo fuego
     public Peru() {
-        super("Hogar de Lava", "Un lugar muy caliente lleno de magma.", 1);
+        super("Peru", "Hogar de los incas y las llamas", 1, 5, " escupitajo de una llama");
     }
     
-    @Override
-    public void Descripcion() {
-        System.out.print(this.descripcion + ", espero que te guste el calor");
-    }
 }

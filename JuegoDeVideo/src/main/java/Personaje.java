@@ -4,9 +4,10 @@
  *
  * @author P5E003-O
  */
-public abstract class Personaje implements Ataque{
+public abstract class Personaje implements Ataque, AtaqueEspecial, Defensa{
     //Atributos de todos los personajes
     protected String nombre;
+    protected String nacion;
     protected int vida;
     protected int fuerza;
     protected int defensa;
@@ -15,28 +16,32 @@ public abstract class Personaje implements Ataque{
     protected int id;
     
     //Constructor para todos los personajes (El nombre se define después)
-    public Personaje(int vida, int fuerza, int defensa, int energia, 
+    public Personaje(String nacion, int vida, int fuerza, int defensa, int energia, 
                 int especial, int id) {
+        this.nacion=nacion;
         this.vida = vida;
         this.fuerza = fuerza;
         this.defensa = defensa;
         this.energia = energia;
         this.especial = especial;
+        //Representa cada clase de luchador
         this.id = id;
     }
     
-    @Override
-    public void ataque(){
-        System.out.println(getNombre()+" ataca");
-    }
-    
-    public abstract boolean isVivo();
     public abstract void datos();
     
-    
+    public boolean isVivo() {
+        return vida > 0;
+    }
+
+    //Getters y Setters
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getNacion() {
+        return nacion;
     }
 
     public int getVida() {
@@ -63,31 +68,27 @@ public abstract class Personaje implements Ataque{
         return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setVida(int vida) {
-        this.vida = vida;
+        //En el setVida hacemos la validacion de que la vida nunca puede ser menor a 0
+        if(vida<0){
+            this.vida=0;
+        }else{
+            this.vida = vida;
+        }
     }
-
-    public void setFuerza(int fuerza) {
-        this.fuerza = fuerza;
-    }
-
-    public void setDefensa(int defensa) {
-        this.defensa = defensa;
-    }
-
-    public void setEnergia(int energia) {
-        this.energia = energia;
-    }
-
-    public void setEspecial(int especial) {
-        this.especial = especial;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    
+    //Implementación abstracta de interfaces para que las clases hijas estén 
+    //forzadas a usarlas. En la documentación lo llaman "clase esqueletica"
+    @Override 
+    public abstract void textoAtaque();
+    
+    @Override
+    public abstract void textoAtaqueEspecial();
+    
+    @Override
+    public abstract void textoCansancio();
+    
+    @Override
+    public abstract void textoDefensa();
+    
 }

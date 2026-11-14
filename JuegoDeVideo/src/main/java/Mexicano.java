@@ -6,19 +6,16 @@
 public class Mexicano extends Personaje{
 
     public Mexicano(String nombre) {
-        super(130, 40, 20, 4, 65, 2);
+        super("Mexico", 130, 40, 20, 10, 65, 2);
         this.nombre=nombre;
-    }
-    
-    
-    @Override
-    public boolean isVivo() {
-        return vida > 0;
     }
     
     @Override
     public void datos(){
-        System.out.println("El personaje " + nombre + " tiene " + vida + " puntos de vida.");
+        System.out.println("Desde la tierra de los ajolotes y las catrinas llega el luchador "
+                + nombre + " tomando tequila. \nLlega con:\nVida: "
+                + vida + "\nFuerza: "+ fuerza + "\nDefensa: " + defensa + "\nEspecial: " + especial 
+                + "\nEnergia: "+ energia+"\n");
     }
     
     //Implementación Interfaces de texto heredadas del abstract Personajes
@@ -30,7 +27,12 @@ public class Mexicano extends Personaje{
     @Override
     public void textoAtaqueEspecial(){
         System.out.println(getNombre()+" invoca a chespirito y cantinflas para un "
-                + "golpe de compañerismo");
+                + "golpe de companierismo");
+    }
+    
+    @Override
+    public void textoCansancio(){
+        System.out.println(getNombre()+" fue frenado por la virgen de Guadalupe");
     }
     
     @Override

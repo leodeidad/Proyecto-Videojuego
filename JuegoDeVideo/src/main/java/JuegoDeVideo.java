@@ -1,16 +1,19 @@
 
 /**
  *
- * @author Joaquin Molina y Dylan Loyo
+ * @author Joaquín Molina, Dylan Loyo, Andres Jimenez, Leonel Herrera 
+ * Profesor: Ingeniero Pablo Saa
+ * Materia: Programacion II
+ * Plantel: Escuela Politecnica Nacional
  */
 public class JuegoDeVideo {
 
     public static void main(String[] args) {
-        Fuego fuego= new Fuego("Pedro");
-        Hielo hielo = new Hielo("Juan");
-        LagoCongelado e1=new LagoCongelado();
+        Peruano fuego= new Peruano("Advincula");
+        Mexicano hielo = new Mexicano("Rey Misterio");
+        Mexico e1=new Mexico();
         Combate c1 = new Combate(fuego, hielo, e1);
-        c1.turno();
+        c1.newCombate();
         
     }
 }

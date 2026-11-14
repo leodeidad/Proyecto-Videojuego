@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 /**
  *
@@ -10,24 +6,19 @@
 public abstract class Entorno {
     protected String nombre;
     protected String descripcion; //(Solo que describa elementos especiales)
+    protected String textoDanioEntorno;
     protected int id; //identificador para los tipos de luchadores (Fuego: 1, Hielo : 2, naturaleza; 3, electricidad: 4)
-    protected boolean armas;
-
-    public Entorno(String nombre, String descripcion, int id) {
+    protected int danioEntorno;
+    
+    //Para el atributo textoDanioEntorno se debe usar una oracion que complete la frase: "nombre" recibio danio por...
+    public Entorno(String nombre, String descripcion, int id, int danioEntorno, String textoDanioEntorno) {
+        this.textoDanioEntorno = textoDanioEntorno;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.danioEntorno = danioEntorno;
         this.id = id;
-        this.armas = false;
-    }
-
-    public void setArmas(boolean armas) {
-        this.armas = armas;
     }
     
-    public boolean getArmas() {
-        return armas;
-    } //Para obtener y verificar si tiene armas el entorno
-
     public String getNombre() {
         return nombre;
     } //Obtener el nombre del entorno
@@ -36,6 +27,13 @@ public abstract class Entorno {
         return id;
     } //Obtener el identificador del entorno
     
-    public abstract void Descripcion(); // Aplicar polimorfismo para mostrar la descripcion del escenario
+    //La descripcion es un atributo que se inicializa en el constructor, y el formato es global para todos los entornos
+    public void Descripcion() {
+          System.out.print("Bienvenidos a "+getNombre()+": "+this.descripcion);
+    }
     
+    public int getDanioEntorno() {
+        return danioEntorno;
+    }
+ 
 }
